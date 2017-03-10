@@ -1,3 +1,11 @@
+import {
+  ADD_PERSON,
+  REMOVE_PERSON,
+  ADD_GUEST,
+  REMOVE_GUEST,
+  TOGGLE_ATTENDING
+} from './actions';
+
 const details = (state, action) => {
   switch(action.type){
     case ADD_GUEST:
