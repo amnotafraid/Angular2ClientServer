@@ -23,4 +23,8 @@ export class PersonListComponent implements OnInit {
   ngOnInit() {
   }
 
+  fireToggleAttending(person.id) {
+    this.toggleAttending.emit(person.id);
+
+  }
 }
