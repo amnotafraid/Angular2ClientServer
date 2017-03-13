@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-title = '@ngrx/store Async Pipe';
+title = '@ngrx/store Expanding State';
 }
