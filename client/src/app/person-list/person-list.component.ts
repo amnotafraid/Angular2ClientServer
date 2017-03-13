@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { people } from '../../people';
 
 @Component({
   selector: 'person-list',
   templateUrl: './person-list.component.html',
-  styleUrls: ['./person-list.component.css']
+  styleUrls: ['./person-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonListComponent implements OnInit {
 	/*
