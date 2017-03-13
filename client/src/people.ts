@@ -20,9 +20,7 @@ const details = (state, action) => {
       return state;
 
     case TOGGLE_ATTENDING:
-      console.log('state = ' + JSON.stringify(state, null, 2));
       if(state.id === action.payload){
-          console.log('state.attending = ' + state.attending);
           return Object.assign({}, state, {attending: !state.attending});
       }
       return state;
@@ -35,7 +33,6 @@ const details = (state, action) => {
 export const people = (state = [], action) => {
   switch(action.type){
     case ADD_PERSON:
-      console.log('ADD_PERSON');
       return [
         ...state,
         Object.assign({}, {id: action.payload.id, name: action.payload.name, guests:0, attending: false})

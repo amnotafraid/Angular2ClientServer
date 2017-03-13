@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { 
+         ChangeDetectionStrategy,
+         Component,
+         EventEmitter,
+         Input,
+         OnInit,
+         Output
+        } from '@angular/core';
 import { people } from '../../people';
 
 @Component({
@@ -13,10 +20,15 @@ export class PersonListComponent implements OnInit {
 		emit relevant events back up for parent, or "container" components to handle
 	*/
 	@Input() people;
+	@Input() filter;
 	@Output() addGuest = new EventEmitter();
 	@Output() removeGuest = new EventEmitter();
 	@Output() removePerson = new EventEmitter();
 	@Output() toggleAttending = new EventEmitter();
+
+  fireToggleAttending(id) {
+    this.toggleAttending.emit(id);
+  }
 
   constructor() { }
 

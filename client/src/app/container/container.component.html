@@ -1,10 +1,23 @@
-	<person-input
+<party-stats
+		[invited]="(people | async)?.length"
+		[attending]="(attending | async)?.length"
+		[guests]="(guests | async)"
+	>
+	{{guests | async | json}}
+</party-stats>
+<filter-select
+		(updateFilter)="updateFilter($event)"
+	>
+</filter-select>
+
+<person-input
 		(addPerson)="addPerson($event)"
 	>
-	</person-input>
+</person-input>
 
-	<person-list
+<person-list
 		[people]="people | async"
+    [filter]="filter | async"
 		(addGuest)="addGuest($event)"
 		(removeGuest)="removeGuest($event)"
 		(removePerson)="removePerson($event)"

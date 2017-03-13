@@ -12,6 +12,7 @@ import { PersonInputComponent } from './person-input/person-input.component';
 import { people } from '../people';
 import { partyFilter } from '../party-filter';
 import { FilterSelectComponent } from './filter-select/filter-select.component';
+import { PartyStatsComponent } from './party-stats/party-stats.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FilterSelectComponent } from './filter-select/filter-select.component';
     PersonListComponent,
     PersonInputComponent,
     FilterSelectComponent,
+    PartyStatsComponent,
   ],
   imports: [
     BrowserModule,

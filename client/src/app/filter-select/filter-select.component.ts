@@ -1,4 +1,9 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { 
+        Component, 
+        EventEmitter, 
+        OnInit, 
+        Output 
+       } from '@angular/core';
 
 import {
   SHOW_ATTENDING,
@@ -21,6 +26,10 @@ export class FilterSelectComponent implements OnInit {
   @Output() updateFilter : EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
+
+  updateFilterChoice(action){
+    this.updateFilter.emit(action);
+  }
 
   ngOnInit() {
   }
