@@ -4,7 +4,7 @@
 	</person-input>
 
 	<person-list
-		[people]="people"
+		[people]="people | async"
 		(addGuest)="addGuest($event)"
 		(removeGuest)="removeGuest($event)"
 		(removePerson)="removePerson($event)"

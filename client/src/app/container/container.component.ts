@@ -22,11 +22,14 @@ export class ContainerComponent implements OnInit {
   constructor(
 		private _store: Store<number>
 	) { 
-		this.subscription = this._store
-			.select('people')
-			.subscribe(people => {
-				this.people = people;
-		});
+		/*
+			Observable of people, utilzing the async pipe
+			in our templates this will be subscribed to, with
+			new values being dispayed in our template.
+			Unsubscribe wil be called automatically when component
+			is disposed.
+		*/
+    this.people = _store.select('people');
 	}
 
   ngOnInit() {
@@ -37,8 +40,8 @@ export class ContainerComponent implements OnInit {
     this._store.dispatch({
       type: ADD_PERSON, 
       payload: {
-				id: id(),name
-			}
+        id: id(),name
+      }
     })
 	}
 
@@ -56,16 +59,18 @@ export class ContainerComponent implements OnInit {
 		});
 	}
 
+	removePerson(id){
+		this._store.dispatch({
+			type: REMOVE_GUEST,
+			payload: id
+		});
+	}
+
 	toggleAttending(id){
 		this._store.dispatch({
 			type: TOGGLE_ATTENDING,
 			payload: id
 		})
-	}
-
-	/* unsubscribe on destroy */
-	ngOnDestroy(){
-		this.subscription.unsubscribe();
 	}
 
 }
