@@ -10,6 +10,8 @@ import { ContainerComponent } from './container/container.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonInputComponent } from './person-input/person-input.component';
 import { people } from '../people';
+import { partyFilter } from '../party-filter';
+import { FilterSelectComponent } from './filter-select/filter-select.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { people } from '../people';
     ContainerComponent,
     PersonListComponent,
     PersonInputComponent,
+    FilterSelectComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [provideStore({ people })],
+  providers: [provideStore({ people, partyFilter })],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
