@@ -61,7 +61,7 @@ export class ContainerComponent implements OnInit {
 
 	removePerson(id){
 		this._store.dispatch({
-			type: REMOVE_GUEST,
+			type: REMOVE_PERSON,
 			payload: id
 		});
 	}
