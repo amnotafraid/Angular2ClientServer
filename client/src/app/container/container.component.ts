@@ -56,6 +56,13 @@ export class ContainerComponent implements OnInit {
 		});
 	}
 
+	removePerson(id){
+		this._store.dispatch({
+			type: REMOVE_PERSON,
+			payload: id
+		});
+	}
+
 	toggleAttending(id){
 		this._store.dispatch({
 			type: TOGGLE_ATTENDING,
