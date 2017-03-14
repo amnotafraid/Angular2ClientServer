@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-title = '@ngrx/store Slicing State for Views';
+title = '@ngrx/store Projecting State for View with combineLatest and with LatestFrom';
 }
