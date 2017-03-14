@@ -23,12 +23,14 @@ export class FilterSelectComponent implements OnInit {
       {friendly: "Attending w/ Guests", action: SHOW_WITH_GUESTS}
     ];
 
+	selectedItem = this.filters[0];
+
   @Output() updateFilter : EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
-  updateFilterChoice(action){
-    this.updateFilter.emit(action);
+  updateFilterChoice(filter){
+    this.updateFilter.emit(filter.action);
   }
 
   ngOnInit() {

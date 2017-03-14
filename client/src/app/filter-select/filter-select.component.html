@@ -1,8 +1,8 @@
 <div class="margin-bottom-10">
   <select [(ngModel)]="selectedItem" (change)="updateFilterChoice(selectedItem)">
-      <option *ngFor="let filter of filters" value="{{filter.action}}">
-          {{filter.friendly}}
-      </option>
+		<option *ngFor="let filter of filters" [ngValue]="filter">
+				{{filter.friendly}}
+		</option>
   </select>
 </div>
 
